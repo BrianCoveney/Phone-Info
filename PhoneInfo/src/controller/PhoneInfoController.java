@@ -154,6 +154,7 @@ public class PhoneInfoController {
 				new Call(contactName, callDuration, dateAndTime);
 		
 		this.persistor.addCallForContact(addCall);
+		
 		this.view.refreshTable();	
 	}
 	
@@ -164,6 +165,7 @@ public class PhoneInfoController {
 				this.dataModel.getContact().remove(selectedIndex);
 
 		this.persistor.delete(removedContact.getName());
+		
 		this.view.refreshTable();
 	}
 	
@@ -181,6 +183,7 @@ public class PhoneInfoController {
 			}
 		}
 		this.persistor.update(originalName, newName, newPhoneNumber);
+		
 		this.view.refreshTable();
 	}
 

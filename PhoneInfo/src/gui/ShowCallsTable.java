@@ -4,6 +4,7 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -52,34 +53,35 @@ public class ShowCallsTable extends JDialog {
 		tableModel = new CallTableModel(call);
 		callTable.setModel(tableModel);
 		
-		//populateCallTable();
+		populateCallTable();
 		callTablePanel.add(callTable);
 
 		
-//		addCallButton = new JButton("Add Call..");
-//		addCallButton.addActionListener(new ActionListener(){
-//	
-//			public void actionPerformed(ActionEvent ev)
-//			{
-//				try{
-//		
-//					int callDuration = Integer.parseInt(JOptionPane.showInputDialog("Input Call Duration :"));
-//					
-//					PhoneInfoController.getInstance().
-//						addCallForContact(selectedContactName, callDuration, Calendar.getInstance().getTime());
-//					
-//					
-//				}catch(NumberFormatException ex){
-//					JFrame outerFrame = new JFrame();
-//					JOptionPane.showConfirmDialog(outerFrame, "Please enter a Number");			
-//				}
-//				dispose();
-//			}
-//		
-//			
-//			
-//		});
-//		callTablePanel.add(addCallButton);
+		addCallButton = new JButton("Add Call..");
+		addCallButton.addActionListener(new ActionListener(){
+	
+			public void actionPerformed(ActionEvent ev)
+			{
+				try{
+		
+					int callDuration = Integer.parseInt(JOptionPane.showInputDialog("Input Call Duration :"));
+					
+					PhoneInfoController.getInstance().
+						addCallForContact(selectedContactName, callDuration, Calendar.getInstance().getTime());
+					
+					
+				}catch(NumberFormatException ex){
+					JFrame outerFrame = new JFrame();
+					JOptionPane.showConfirmDialog(outerFrame, "Please enter a Number");			
+				}
+				dispose();
+			}
+		
+			
+			
+		});
+		callTablePanel.add(addCallButton);
+		
 		
 		setLayout(new BorderLayout());
 	    add(new JScrollPane(callTable), BorderLayout.CENTER);
@@ -99,10 +101,12 @@ public class ShowCallsTable extends JDialog {
 			
 		for(Call currCall : callsForContact)
 		{
-		    
+			
 		}
 		
-	}	
-	
+		
+			
+		}
+
 	
 }//end ShowCallsDialog class

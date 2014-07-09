@@ -144,7 +144,7 @@ public class PhoneInfoFrame extends JFrame {
 		
 		
 		/*************************************************
-		 * Commenting out this, as JTable not working 100% 
+		 * Setting up JTable
 		**************************************************/
 		showTableButton = new JButton("Show All Call Info");
 		showTableButton.addActionListener(new ActionListener(){
